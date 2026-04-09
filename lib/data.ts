@@ -74,7 +74,7 @@ export const projects: Project[] = [
 export const experiences: ExperienceItem[] = [
   {
     date: "December 2024 – June 2025",
-    title: "Technical Specialist · IBEX Global (Allstate Campaign)",
+    title: "Technical Specialist · SquareTrade-Allstate,
     location: "Islamabad, Pakistan",
     details: [
       "Triaged and resolved 50+ inbound appliance insurance claims daily.",
