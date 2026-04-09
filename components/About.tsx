@@ -29,18 +29,18 @@ export default function About() {
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="space-y-6 text-[16px] leading-[1.7] text-textSecondary">
               <p>
-                I&apos;m Saifullah — a Computer Science student at NUST SEECS, Islamabad, building at the intersection
+                I&apos;m Saifullah, a Computer Science student at NUST SEECS, Islamabad, building at the intersection
                 of full-stack development, AI integration, and systems design.
               </p>
               <p>
-                I started with C++ and quickly moved into full-stack territory — shipping a production app (NUST Lost
+                I started with C++ and quickly moved into full-stack territory, shipping a production app (NUST Lost
                 & Found) with React, TypeScript, Supabase, and PostgreSQL while the semester was still running. Most
                 recently I&apos;ve been working with Firebase and Kotlin Jetpack Compose on SAFAR, a ride-sharing
                 mobile app built for NUST students.
               </p>
               <p>
                 My focus right now: Java, ML/AI, C++, Firebase, and AI-assisted development using tools like Claude
-                Code. I like building things that solve real problems for real people — not just demo projects.
+                Code. I like building things that solve real problems for real people, not just demo projects.
               </p>
               <p>
                 Outside code, I&apos;ve worked professionally as a Technical Specialist at SquareTrade - AllState Global handling 50+
