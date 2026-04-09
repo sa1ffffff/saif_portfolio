@@ -25,13 +25,13 @@ export default function Hero() {
             AI-assisted software — from idea to deployment.
           </p>
           <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row md:items-start">
-            
+            <a
               href="#work"
               className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.02]"
             >
               View My Work <ArrowRight size={16} />
             </a>
-            
+            <a
               href="#contact"
               className="inline-flex items-center rounded-full border border-border px-6 py-3 text-sm font-semibold text-textPrimary transition hover:border-accent hover:text-accent"
             >
