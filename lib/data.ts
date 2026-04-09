@@ -45,29 +45,11 @@ export const projects: Project[] = [
   {
     title: "Neon Racing 3D",
     type: "C++ / Game",
-    year: "2024",
+    year: "2025",
     stack: ["C++", "OOP", "Data Structures"],
     description:
       "Fully playable 3D racing game in C++ using object-oriented design, pointers, and structs. Architected reusable class hierarchies for vehicles, tracks, and collision logic. Demonstrates strong systems-level programming.",
-    links: [{ label: "GitHub", href: "https://github.com/sa1ffffff" }]
-  },
-  {
-    title: "Prompt Helper (Chrome Extension)",
-    type: "Tools",
-    year: "2024",
-    stack: ["JavaScript", "Chrome MV3", "Gemini API", "OpenAI API"],
-    description:
-      "Chrome extension with a proxy backend supporting both Gemini and OpenAI APIs. Built with Manifest V3 architecture, reddish-black theme, and a clean popup UI for AI-assisted prompt generation.",
-    links: [{ label: "GitHub", href: "https://github.com/sa1ffffff" }]
-  },
-  {
-    title: "HessianX",
-    type: "Tools",
-    year: "2024",
-    stack: ["Python", "SymPy", "Matplotlib", "PySide6"],
-    description:
-      "Desktop application for analyzing critical points of multivariable functions f(x,y). Features symbolic computation with SymPy, matplotlib visualizations, and a dark navy/graphite PySide6 GUI.",
-    links: [{ label: "GitHub", href: "https://github.com/sa1ffffff" }]
+    links: [{ label: "GitHub", href: "https://github.com/sa1ffffff/Neon-Racing-3d" }]
   }
 ];
 
