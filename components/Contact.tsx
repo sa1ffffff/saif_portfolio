@@ -5,26 +5,10 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useRef } from "react";
 
 const contacts = [
-  {
-    icon: Mail,
-    href: "mailto:saifullahwasim1@gmail.com",
-    label: "Email"
-  },
-  {
-    icon: FaWhatsapp,
-    href: "https://wa.me/923123639722",
-    label: "WhatsApp"
-  },
-  {
-    icon: Github,
-    href: "https://github.com/sa1ffffff",
-    label: "GitHub"
-  },
-  {
-    icon: Linkedin,
-    href: "https://linkedin.com/in/saifullah-waseem",
-    label: "LinkedIn"
-  }
+  { icon: Mail, href: "mailto:saifullahwasim1@gmail.com", label: "Email" },
+  { icon: FaWhatsapp, href: "https://wa.me/923123639722", label: "WhatsApp" },
+  { icon: Github, href: "https://github.com/sa1ffffff", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/saifullah-waseem", label: "LinkedIn" },
 ];
 
 export default function Contact() {
