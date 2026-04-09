@@ -31,7 +31,6 @@ export default function Contact() {
             I&apos;m open to internships, freelance projects, hackathon collaborations, and full-time roles after
             graduation. If you have something in mind — let&apos;s talk.
           </p>
-
           <div className="mt-10 flex items-center gap-5">
             {contacts.map((item) => {
               const Icon = item.icon;
