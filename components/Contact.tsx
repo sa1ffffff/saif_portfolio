@@ -35,7 +35,7 @@ export default function Contact() {
             {contacts.map((item) => {
               const Icon = item.icon;
               return (
-                
+                <a
                   key={item.label}
                   href={item.href}
                   target="_blank"
