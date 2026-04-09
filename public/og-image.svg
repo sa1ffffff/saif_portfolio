@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0a0a0a" />
+  <rect x="60" y="60" width="1080" height="510" rx="24" fill="#111111" stroke="#222222" />
+  <text x="120" y="280" fill="#00ff88" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="700">
+    Saifullah Waseem
+  </text>
+  <text x="120" y="350" fill="#f0f0f0" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="500">
+    Building software that matters.
+  </text>
+  <text x="120" y="420" fill="#888888" font-family="Inter, Arial, sans-serif" font-size="28">
+    Full-stack • Mobile • AI-assisted Development
+  </text>
+</svg>
