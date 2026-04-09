@@ -78,18 +78,10 @@ export const experiences: ExperienceItem[] = [
 export const aboutTechStacks: string[] = [
   "Java",
   "C++",
-  "Python",
-  "TypeScript",
-  "JavaScript",
   "SQL",
-  "React",
-  "Next.js",
-  "Supabase",
   "Firebase",
-  "Tailwind",
-  "PostgreSQL",
-  "MongoDB",
   "Git",
   "Vercel",
-  "Claude Code"
+  "Claude Code",
+  "AI Coding IDEs"
 ];
