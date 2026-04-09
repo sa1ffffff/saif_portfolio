@@ -1,6 +1,8 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+
 export default function Hero() {
   return (
     <section id="hero" className="mx-auto flex min-h-screen w-full max-w-content items-center px-5 pt-20 md:px-8">
