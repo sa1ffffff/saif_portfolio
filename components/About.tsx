@@ -43,7 +43,7 @@ export default function About() {
                 Code. I like building things that solve real problems for real people — not just demo projects.
               </p>
               <p>
-                Outside code, I&apos;ve worked professionally as a Technical Specialist at IBEX Global handling 50+
+                Outside code, I&apos;ve worked professionally as a Technical Specialist at SquareTrade - AllState Global handling 50+
                 insurance claims daily, which taught me more about clear communication and pressure than any class did.
               </p>
             </div>
