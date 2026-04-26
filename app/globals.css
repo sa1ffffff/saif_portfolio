@@ -28,6 +28,25 @@ body {
   font-feature-settings: "rlig" 1, "calt" 1;
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  border: 1px solid var(--accent);
+  border-radius: 9999px;
+  background: var(--surface);
+  color: var(--text-primary);
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: none;
+}
+
 .section-label {
   @apply text-[12px] uppercase tracking-[0.18em] text-textSecondary;
 }

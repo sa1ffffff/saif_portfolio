@@ -20,6 +20,19 @@ export interface ExperienceItem {
 
 export const projects: Project[] = [
   {
+    title: "SubtrakX",
+    type: "Web App",
+    year: "2026",
+    stack: ["React", "TypeScript", "Vite", "Supabase", "PostgreSQL", "Tailwind CSS", "Recharts", "Vitest"],
+    description:
+      "Subscription intelligence platform that tracks recurring spend, detects idle high-cost services, predicts monthly burn, and computes a health score using SQL-first analytics.",
+    highlight: "Live SaaS dashboard · Waste detection + predictive insights",
+    links: [
+      { label: "Live", href: "https://subtrak-insights.vercel.app" },
+      { label: "GitHub", href: "https://github.com/sa1ffffff/subtrak-insights" }
+    ]
+  },
+  {
     title: "NUST Lost & Found",
     type: "Web App",
     year: "2025",

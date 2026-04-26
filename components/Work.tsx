@@ -74,6 +74,7 @@ export default function Work() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`${project.title} ${link.label}`}
                       className="inline-flex items-center gap-1 text-sm text-accentSecondary transition hover:text-accent"
                     >
                       {link.label} ↗
