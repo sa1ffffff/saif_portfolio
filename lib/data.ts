@@ -73,7 +73,6 @@ export const experiences: ExperienceItem[] = [
     location: "Islamabad, Pakistan",
     details: [
       "Triaged and resolved 50+ inbound appliance insurance claims daily.",
-      "Reduced average call handle time by streamlining troubleshooting workflows.",
       "Collaborated with cross-functional teams on escalated cases."
     ],
     skills: ["Customer Service", "Technical Communication", "Agile Problem Solving"]
