@@ -35,12 +35,13 @@ export const projects: Project[] = [
   {
     title: "Zones Mess Menu",
     type: "Web App",
-    year: "2025–2026",
+    year: "2026",
     stack: ["React", "TypeScript", "TanStack Router", "Supabase", "PostgreSQL", "Tailwind CSS", "shadcn/ui"],
     description:
       "Internal web app for Zones LLC Islamabad to browse the monthly cafeteria menu by week and day, rate dinners with aggregated rating summaries, and submit feedback/queries to admins. Features Google OAuth via Supabase Auth, real-time PostgreSQL backend, and a responsive mobile-first UI.",
     highlight: "Live in production · Used daily by Zones LLC staff",
     links: [
+      { label: "Live", href: "https://github.com/sa1ffffff/saif_portfolio" },
       { label: "GitHub", href: "https://github.com/sa1ffffff/zones_mess_menu" }
     ]
   },
