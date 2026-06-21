@@ -16,7 +16,11 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="about" className="border-t border-border">
+    <section id="about" className="border-t border-border relative">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/3 left-0 w-96 h-96 bg-gradient-to-r from-cyan-200/30 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-0 w-96 h-96 bg-gradient-to-l from-purple-200/30 to-transparent rounded-full blur-3xl" />
+      </div>
       <div ref={ref} className="mx-auto max-w-content px-5 py-24 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
@@ -52,12 +56,16 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="card-base p-7"
+              className="rounded-2xl border-2 p-7 transition-all duration-300 hover:scale-105"
+              style={{
+                borderColor: '#e2e8f0',
+                background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(88, 80, 236, 0.04) 100%)'
+              }}
             >
               <div className="grid grid-cols-2 gap-6">
                 {stats.map((item) => (
                   <div key={item.label}>
-                    <p className="text-2xl font-bold text-accent-light">{item.value}</p>
+                    <p className="text-2xl font-bold" style={{ color: '#7c3aed' }}>{item.value}</p>
                     <p className="mt-1.5 text-sm font-medium text-text-secondary">{item.label}</p>
                   </div>
                 ))}

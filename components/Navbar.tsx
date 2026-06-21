@@ -40,7 +40,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-content items-center justify-between px-5 md:px-8">
         <Link href="#hero" className="text-lg font-semibold tracking-tight text-text-primary font-serif">
-          Saifullah<span className="text-accent-light">.</span>
+          Saifullah<span style={{ color: '#7c3aed' }}>.</span>
         </Link>
 
         <nav className="hidden items-center gap-10 md:flex">
@@ -60,8 +60,9 @@ export default function Navbar() {
                 key={item.label}
                 href={item.href}
                 className={`link-underline text-sm font-medium transition-colors ${
-                  activeSection === item.section ? "text-accent-light" : "text-text-secondary hover:text-text-primary"
+                  activeSection === item.section ? "text-white" : "text-text-secondary hover:text-text-primary"
                 }`}
+                style={activeSection === item.section ? { background: 'linear-gradient(135deg, #7c3aed 0%, #5850ec 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' } : {}}
               >
                 {item.label}
               </a>
@@ -71,7 +72,8 @@ export default function Navbar() {
             href="/Saifullah_Waseem_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg border border-accent-light/20 px-5 py-2 text-sm font-medium text-text-primary transition hover:border-accent-light hover:bg-accent-soft"
+            className="rounded-lg border-2 px-5 py-2 text-sm font-medium text-text-primary transition duration-300 hover:scale-105"
+            style={{ borderColor: '#7c3aed', backgroundColor: 'rgba(124, 58, 237, 0.08)' }}
           >
             Resume ↗
           </a>

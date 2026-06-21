@@ -16,7 +16,11 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="contact" className="border-t border-border">
+    <section id="contact" className="border-t border-border relative">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 left-1/2 w-96 h-96 bg-gradient-to-b from-violet-300/40 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-l from-cyan-200/30 to-transparent rounded-full blur-3xl" />
+      </div>
       <div ref={ref} className="mx-auto max-w-content px-5 py-24 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -24,8 +28,8 @@ export default function Contact() {
           transition={{ duration: 0.55 }}
         >
           <p className="section-label">Get In Touch</p>
-          <h2 className="mt-6 text-4xl font-bold leading-tight md:text-5xl text-text-primary font-serif">
-            Let&apos;s build something exceptional.
+          <h2 className="mt-6 text-4xl font-bold leading-tight md:text-5xl font-serif">
+            Let&apos;s build something <span className="gradient-text">exceptional</span>.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-text-secondary">
             Open to internships, freelance projects, hackathon collaborations, and full-time opportunities after graduation. If you have an idea worth building—let&apos;s talk.
@@ -34,16 +38,18 @@ export default function Contact() {
             {contacts.map((item) => {
               const Icon = item.icon;
               return (
-                <a
+                <motion.a
                   key={item.label}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.label}
-                  className="group flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-transparent transition-all duration-300 hover:border-accent-light hover:bg-accent-soft"
+                  whileHover={{ scale: 1.1, y: -4 }}
+                  className="group flex h-12 w-12 items-center justify-center rounded-lg border-2 transition-all duration-300"
+                  style={{ borderColor: '#e2e8f0' }}
                 >
-                  <Icon className="h-5 w-5 text-text-secondary transition-colors duration-300 group-hover:text-accent-light" />
-                </a>
+                  <Icon className="h-5 w-5 transition-all duration-300" style={{ color: '#7c3aed' }} />
+                </motion.a>
               );
             })}
           </div>

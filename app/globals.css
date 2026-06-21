@@ -4,16 +4,24 @@
 
 @layer base {
   :root {
-    --background: #fafafa;
+    --background: #f8f9fc;
+    --background-secondary: #f0f4f9;
     --surface: #ffffff;
-    --surface-secondary: #f5f5f5;
-    --border: #e5e5e5;
-    --accent: #1f2937;
-    --accent-soft: #e0e7ff;
-    --accent-light: #4f46e5;
-    --text-primary: #111827;
-    --text-secondary: #6b7280;
-    --text-muted: #9ca3af;
+    --surface-secondary: #f5f7fb;
+    --border: #e2e8f0;
+    --border-light: #eef2f5;
+    --accent: #2d3748;
+    --accent-soft: #e6f0ff;
+    --accent-light: #5850ec;
+    --accent-bright: #7c3aed;
+    --accent-warm: #f97316;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #5850ec 100%);
+    --gradient-secondary: linear-gradient(135deg, #5850ec 0%, #2563eb 100%);
+    --gradient-warm: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    --gradient-cool: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
   }
 
   * {
@@ -35,8 +43,8 @@
 @layer components {
   .skip-link {
     @apply absolute left-4 -top-12 z-50 rounded-full border px-3.5 py-2 text-xs font-medium transition-all focus:top-4 focus:outline-none;
-    border-color: var(--accent);
-    background-color: var(--surface);
+    border-color: var(--accent-light);
+    background: var(--surface);
     color: var(--text-primary);
   }
 
@@ -46,15 +54,17 @@
   }
 
   .tag-pill {
-    @apply rounded-full border px-3 py-1.5 text-xs font-medium transition-colors;
-    border-color: var(--border);
-    background-color: var(--surface-secondary);
+    @apply rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-300;
+    border-color: var(--border-light);
+    background: linear-gradient(135deg, var(--surface-secondary) 0%, #fafbfc 100%);
     color: var(--text-secondary);
   }
 
   .tag-pill:hover {
     border-color: var(--accent-light);
+    background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
     color: var(--accent-light);
+    transform: translateY(-1px);
   }
 
   .link-underline {
@@ -64,7 +74,7 @@
   .link-underline::after {
     content: "";
     @apply absolute left-0 bottom-0 w-full h-px scale-x-0 origin-left transition-transform duration-300;
-    background-color: var(--accent);
+    background: var(--gradient-primary);
   }
 
   .link-underline:hover::after {
@@ -72,13 +82,34 @@
   }
 
   .card-base {
-    @apply rounded-2xl border transition-all;
+    @apply rounded-2xl border transition-all duration-300;
     border-color: var(--border);
-    background-color: var(--surface);
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+  }
+
+  .card-hover {
+    @apply hover:scale-105;
+    border-color: var(--border-light);
   }
 
   .card-hover:hover {
     border-color: var(--accent-light);
-    box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.1);
+    box-shadow: 0 20px 40px -10px rgba(124, 58, 237, 0.15);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.2);
+  }
+
+  .backdrop-blur-hero {
+    @apply backdrop-blur-xl;
+    background: rgba(255, 255, 255, 0.85);
   }
 }

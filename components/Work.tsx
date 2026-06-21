@@ -18,7 +18,11 @@ export default function Work() {
   }, [activeTab]);
 
   return (
-    <section id="work" className="border-t border-border">
+    <section id="work" className="border-t border-border relative">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-10 right-0 w-80 h-80 bg-gradient-to-bl from-purple-200/30 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-0 w-80 h-80 bg-gradient-to-tr from-indigo-200/30 to-transparent rounded-full blur-3xl" />
+      </div>
       <div ref={ref} className="mx-auto max-w-content px-5 py-24 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -32,11 +36,12 @@ export default function Work() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`rounded-full border px-5 py-2 text-sm font-medium transition ${
+                className={`rounded-full border px-5 py-2 text-sm font-medium transition duration-300 ${
                   activeTab === tab
-                    ? "border-accent-light bg-accent-soft text-accent-light"
+                    ? "border-accent-light text-white"
                     : "border-border text-text-secondary hover:border-accent-light/50 hover:text-text-primary"
                 }`}
+                style={activeTab === tab ? { background: 'linear-gradient(135deg, #7c3aed 0%, #5850ec 100%)' } : {}}
               >
                 {tab}
               </button>
@@ -50,14 +55,19 @@ export default function Work() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.06, duration: 0.45 }}
-                whileHover={{ scale: 1.01 }}
-                className="card-base card-hover group relative flex h-full flex-col p-8"
+                whileHover={{ scale: 1.02, y: -4 }}
+                className="group relative flex h-full flex-col p-8 rounded-2xl border-2 transition-all duration-300"
+                style={{
+                  borderColor: '#e2e8f0',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 252, 0.95) 100%)',
+                }}
               >
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
                 <p className="absolute right-6 top-6 text-xs font-semibold text-text-muted">{project.year}</p>
                 <p className="section-label">{project.type}</p>
                 <h3 className="mt-3 text-2xl font-semibold text-text-primary">{project.title}</h3>
                 <p className="mt-4 text-base leading-relaxed text-text-secondary">{project.description}</p>
-                {project.highlight ? <p className="mt-4 text-sm font-medium text-accent-light">{project.highlight}</p> : null}
+                {project.highlight ? <p className="mt-4 text-sm font-medium" style={{ color: '#7c3aed' }}>{project.highlight}</p> : null}
 
                 <div className="mt-6 flex flex-wrap gap-2">
                   {project.stack.map((item) => (
@@ -75,13 +85,14 @@ export default function Work() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${project.title} ${link.label}`}
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-accent-light transition hover:text-accent"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium transition duration-300"
+                      style={{ color: '#7c3aed' }}
                     >
                       {link.label} ↗
                     </a>
                   ))}
                 </div>
-                <ArrowUpRight className="absolute right-6 top-16 h-5 w-5 text-text-muted/30 opacity-0 transition group-hover:opacity-100 group-hover:text-accent-light" />
+                <ArrowUpRight className="absolute right-6 top-16 h-5 w-5 text-text-muted/30 opacity-0 transition group-hover:opacity-100 group-hover:scale-110 duration-300" style={{ color: '#7c3aed' }} />
               </motion.article>
             ))}
           </div>
