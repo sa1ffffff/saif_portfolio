@@ -37,13 +37,13 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-content items-center justify-between px-5 md:px-8">
-        <Link href="#hero" className="text-lg font-bold tracking-tight">
-          Saifullah<span className="text-accent">.</span>
+        <Link href="#hero" className="text-lg font-semibold tracking-tight text-text-primary font-serif">
+          Saifullah<span className="text-accent-light">.</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-10 md:flex">
           {navItems.map((item) =>
             item.external ? (
               <a
@@ -51,7 +51,7 @@ export default function Navbar() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-underline text-sm text-textSecondary transition-colors hover:text-textPrimary"
+                className="link-underline text-sm text-text-secondary transition-colors hover:text-text-primary"
               >
                 {item.label}
               </a>
@@ -59,8 +59,8 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className={`link-underline text-sm transition-colors ${
-                  activeSection === item.section ? "text-accent" : "text-textSecondary hover:text-textPrimary"
+                className={`link-underline text-sm font-medium transition-colors ${
+                  activeSection === item.section ? "text-accent-light" : "text-text-secondary hover:text-text-primary"
                 }`}
               >
                 {item.label}
@@ -71,7 +71,7 @@ export default function Navbar() {
             href="/Saifullah_Waseem_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-border px-4 py-2 text-sm text-textPrimary transition hover:border-accent hover:text-accent"
+            className="rounded-lg border border-accent-light/20 px-5 py-2 text-sm font-medium text-text-primary transition hover:border-accent-light hover:bg-accent-soft"
           >
             Resume ↗
           </a>
@@ -79,7 +79,7 @@ export default function Navbar() {
 
         <button
           aria-label="Toggle menu"
-          className="text-textPrimary md:hidden"
+          className="text-text-primary md:hidden"
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {isOpen ? <X size={22} /> : <Menu size={22} />}
@@ -92,7 +92,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="border-t border-border bg-surface md:hidden"
+            className="border-t border-border bg-surface-secondary md:hidden"
           >
             <div className="mx-auto flex max-w-content flex-col px-5 py-4">
               {navItems.map((item) =>
@@ -102,7 +102,7 @@ export default function Navbar() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-2 text-textSecondary"
+                    className="py-2.5 text-text-secondary font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
@@ -111,7 +111,7 @@ export default function Navbar() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className={`py-2 ${activeSection === item.section ? "text-accent" : "text-textSecondary"}`}
+                    className={`py-2.5 font-medium ${activeSection === item.section ? "text-accent-light" : "text-text-secondary"}`}
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
@@ -122,7 +122,7 @@ export default function Navbar() {
                 href="/Saifullah_Waseem_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 py-2 text-textPrimary"
+                className="mt-3 py-2.5 text-text-primary font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 Resume ↗

@@ -23,15 +23,14 @@ export default function Contact() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55 }}
         >
-          <p className="section-label">Contact</p>
-          <h2 className="mt-5 text-4xl font-bold leading-tight md:text-5xl">
-            Let&apos;s build something together.
+          <p className="section-label">Get In Touch</p>
+          <h2 className="mt-6 text-4xl font-bold leading-tight md:text-5xl text-text-primary font-serif">
+            Let&apos;s build something exceptional.
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-[1.7] text-textSecondary">
-            I&apos;m open to internships, freelance projects, hackathon collaborations, and full-time roles after
-            graduation. If you have something in mind — let&apos;s talk.
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-text-secondary">
+            Open to internships, freelance projects, hackathon collaborations, and full-time opportunities after graduation. If you have an idea worth building—let&apos;s talk.
           </p>
-          <div className="mt-10 flex items-center gap-5">
+          <div className="mt-12 flex items-center gap-4">
             {contacts.map((item) => {
               const Icon = item.icon;
               return (
@@ -41,9 +40,9 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.label}
-                  className="group flex h-11 w-11 items-center justify-center rounded-full border border-border bg-transparent transition-all duration-300 hover:border-accent hover:bg-accent/10"
+                  className="group flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-transparent transition-all duration-300 hover:border-accent-light hover:bg-accent-soft"
                 >
-                  <Icon className="h-5 w-5 text-textSecondary transition-colors duration-300 group-hover:text-accent" />
+                  <Icon className="h-5 w-5 text-text-secondary transition-colors duration-300 group-hover:text-accent-light" />
                 </a>
               );
             })}

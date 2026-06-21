@@ -26,15 +26,15 @@ export default function About() {
         >
           <p className="section-label">About</p>
 
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="space-y-6 text-[16px] leading-[1.7] text-textSecondary">
+          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+            <div className="space-y-5 text-[16px] leading-relaxed text-text-secondary">
               <p>
                 I&apos;m Saifullah, a Computer Science student at NUST SEECS, Islamabad, building at the intersection
                 of full-stack development, AI integration, and systems design.
               </p>
               <p>
                 I started with C++ and quickly moved into full-stack territory, shipping production apps with React,
-                TypeScript, Supabase, and PostgreSQL — including the Zones Mess Menu, an internal web app I built for
+                TypeScript, Supabase, and PostgreSQL—including the Zones Mess Menu, an internal web app I built for
                 Zones LLC Islamabad using TanStack Router and shadcn/ui. Most recently I&apos;ve been working with
                 Firebase and Kotlin Jetpack Compose on SAFAR, a ride-sharing mobile app built for NUST students.
               </p>
@@ -43,21 +43,26 @@ export default function About() {
                 Code. I like building things that solve real problems for real people, not just demo projects.
               </p>
               <p>
-                Outside code, I&apos;ve worked professionally as a Technical Specialist at SquareTrade - AllState Global handling 50+
+                Outside code, I&apos;ve worked professionally as a Technical Specialist at SquareTrade-AllState Global handling 50+
                 insurance claims daily, which taught me more about clear communication and pressure than any class did.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-border bg-surface p-6">
-              <div className="grid grid-cols-2 gap-5">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="card-base p-7"
+            >
+              <div className="grid grid-cols-2 gap-6">
                 {stats.map((item) => (
                   <div key={item.label}>
-                    <p className="text-2xl font-bold text-textPrimary">{item.value}</p>
-                    <p className="mt-1 text-sm text-textSecondary">{item.label}</p>
+                    <p className="text-2xl font-bold text-accent-light">{item.value}</p>
+                    <p className="mt-1.5 text-sm font-medium text-text-secondary">{item.label}</p>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
           <div className="flex flex-wrap gap-2 pt-2">

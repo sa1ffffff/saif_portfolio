@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
+const playfair = Playfair_Display({ subsets: ["latin"], display: "swap", weight: ["600", "700"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://saifullahwaseem.dev"),
@@ -59,14 +60,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0a",
-  colorScheme: "dark"
+  themeColor: "#fafafa",
+  colorScheme: "light"
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" className="bg-background">
+      <body className={`${inter.className} antialiased`} style={{ "--font-serif": playfair.style.fontFamily } as React.CSSProperties}>
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>

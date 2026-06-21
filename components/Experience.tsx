@@ -18,15 +18,21 @@ export default function Experience() {
         >
           <p className="section-label">Experience</p>
 
-          <div className="mt-10 space-y-10">
+          <div className="mt-12 space-y-10">
             {experiences.map((exp, index) => (
-              <article key={exp.title} className="relative border-l border-border pl-6">
-                <span className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-accent" />
-                <p className="text-sm text-textSecondary">{exp.date}</p>
-                <h3 className="mt-1 text-xl font-bold text-textPrimary">{exp.title}</h3>
-                <p className="mt-1 text-sm text-textSecondary">{exp.location}</p>
+              <motion.article
+                key={exp.title}
+                initial={{ opacity: 0, x: -16 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="relative border-l-2 border-accent-light/30 pl-7 transition-all"
+              >
+                <span className="absolute -left-2.5 top-0 h-5 w-5 rounded-full border-2 border-accent-light bg-white" />
+                <p className="text-xs uppercase tracking-widest font-semibold text-text-muted">{exp.date}</p>
+                <h3 className="mt-2 text-xl font-semibold text-text-primary">{exp.title}</h3>
+                <p className="mt-1 text-sm font-medium text-accent-light">{exp.location}</p>
 
-                <div className="mt-4 space-y-2 text-[15px] leading-[1.7] text-textSecondary">
+                <div className="mt-4 space-y-2 text-[15px] leading-relaxed text-text-secondary">
                   {exp.details.map((detail) => (
                     <p key={`${index}-${detail}`}>{detail}</p>
                   ))}
@@ -41,7 +47,7 @@ export default function Experience() {
                     ))}
                   </div>
                 ) : null}
-              </article>
+              </motion.article>
             ))}
           </div>
         </motion.div>

@@ -27,15 +27,15 @@ export default function Work() {
         >
           <p className="section-label">SELECTED WORK / 2024–2026</p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-8 flex flex-wrap gap-3">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`rounded-full border px-4 py-1.5 text-sm transition ${
+                className={`rounded-full border px-5 py-2 text-sm font-medium transition ${
                   activeTab === tab
-                    ? "border-accent bg-[#00ff8812] text-accent"
-                    : "border-border text-textSecondary hover:border-accentSecondary hover:text-accentSecondary"
+                    ? "border-accent-light bg-accent-soft text-accent-light"
+                    : "border-border text-text-secondary hover:border-accent-light/50 hover:text-text-primary"
                 }`}
               >
                 {tab}
@@ -43,23 +43,23 @@ export default function Work() {
             ))}
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
             {filtered.map((project, index) => (
               <motion.article
                 key={project.title}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.06, duration: 0.45 }}
-                whileHover={{ scale: 1.02 }}
-                className="group relative flex h-full flex-col rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent"
+                whileHover={{ scale: 1.01 }}
+                className="card-base card-hover group relative flex h-full flex-col p-8"
               >
-                <p className="absolute right-5 top-5 text-xs text-textMuted">{project.year}</p>
+                <p className="absolute right-6 top-6 text-xs font-semibold text-text-muted">{project.year}</p>
                 <p className="section-label">{project.type}</p>
-                <h3 className="mt-2 text-2xl font-bold">{project.title}</h3>
-                <p className="mt-4 text-sm leading-[1.75] text-textSecondary">{project.description}</p>
-                {project.highlight ? <p className="mt-4 text-sm text-accent">{project.highlight}</p> : null}
+                <h3 className="mt-3 text-2xl font-semibold text-text-primary">{project.title}</h3>
+                <p className="mt-4 text-base leading-relaxed text-text-secondary">{project.description}</p>
+                {project.highlight ? <p className="mt-4 text-sm font-medium text-accent-light">{project.highlight}</p> : null}
 
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap gap-2">
                   {project.stack.map((item) => (
                     <span key={item} className="tag-pill">
                       {item}
@@ -67,7 +67,7 @@ export default function Work() {
                   ))}
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-4">
+                <div className="mt-auto pt-6 flex flex-wrap gap-5">
                   {project.links.map((link) => (
                     <a
                       key={link.label}
@@ -75,13 +75,13 @@ export default function Work() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${project.title} ${link.label}`}
-                      className="inline-flex items-center gap-1 text-sm text-accentSecondary transition hover:text-accent"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-accent-light transition hover:text-accent"
                     >
                       {link.label} ↗
                     </a>
                   ))}
                 </div>
-                <ArrowUpRight className="absolute right-5 top-14 h-4 w-4 text-textMuted opacity-0 transition group-hover:opacity-100 group-hover:text-accent" />
+                <ArrowUpRight className="absolute right-6 top-16 h-5 w-5 text-text-muted/30 opacity-0 transition group-hover:opacity-100 group-hover:text-accent-light" />
               </motion.article>
             ))}
           </div>
