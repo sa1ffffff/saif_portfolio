@@ -33,10 +33,10 @@ export default function About() {
                 of full-stack development, AI integration, and systems design.
               </p>
               <p>
-                I started with C++ and quickly moved into full-stack territory, shipping a production app (NUST Lost
-                & Found) with React, TypeScript, Supabase, and PostgreSQL while the semester was still running. Most
-                recently I&apos;ve been working with Firebase and Kotlin Jetpack Compose on SAFAR, a ride-sharing
-                mobile app built for NUST students.
+                I started with C++ and quickly moved into full-stack territory, shipping production apps with React,
+                TypeScript, Supabase, and PostgreSQL — including the Zones Mess Menu, an internal web app I built for
+                Zones LLC Islamabad using TanStack Router and shadcn/ui. Most recently I&apos;ve been working with
+                Firebase and Kotlin Jetpack Compose on SAFAR, a ride-sharing mobile app built for NUST students.
               </p>
               <p>
                 My focus right now: Java, ML/AI, C++, Firebase, and AI-assisted development using tools like Claude

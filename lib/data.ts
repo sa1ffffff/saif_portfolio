@@ -33,16 +33,15 @@ export const projects: Project[] = [
     ]
   },
   {
-    title: "NUST Lost & Found",
+    title: "Zones Mess Menu",
     type: "Web App",
-    year: "2025",
-    stack: ["React", "TypeScript", "Supabase", "PostgreSQL", "EmailJS", "Vercel"],
+    year: "2025–2026",
+    stack: ["React", "TypeScript", "TanStack Router", "Supabase", "PostgreSQL", "Tailwind CSS", "shadcn/ui"],
     description:
-      "Full-stack web application centralizing lost and found item reporting across NUST campus. Built with PostgreSQL Row Level Security for role-based access control, automated email notifications via EmailJS, and a reactive UI with optimistic updates.",
-    highlight: "Live in production · Used by NUST students & staff",
+      "Internal web app for Zones LLC Islamabad to browse the monthly cafeteria menu by week and day, rate dinners with aggregated rating summaries, and submit feedback/queries to admins. Features Google OAuth via Supabase Auth, real-time PostgreSQL backend, and a responsive mobile-first UI.",
+    highlight: "Live in production · Used daily by Zones LLC staff",
     links: [
-      { label: "Live", href: "https://nustlostandfound.vercel.app" },
-      { label: "GitHub", href: "https://github.com/sa1ffffff" }
+      { label: "GitHub", href: "https://github.com/sa1ffffff/zones_mess_menu" }
     ]
   },
   {
@@ -92,6 +91,7 @@ export const aboutTechStacks: string[] = [
   "C++",
   "SQL",
   "Firebase",
+  "TanStack",
   "Git",
   "Vercel",
   "Claude Code",
