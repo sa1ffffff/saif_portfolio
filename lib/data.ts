@@ -41,7 +41,7 @@ export const projects: Project[] = [
       "Internal web app for Zones LLC Islamabad to browse the monthly cafeteria menu by week and day, rate dinners with aggregated rating summaries, and submit feedback/queries to admins. Features Google OAuth via Supabase Auth, real-time PostgreSQL backend, and a responsive mobile-first UI.",
     highlight: "Live in production · Used daily by Zones LLC staff",
     links: [
-      { label: "Live", href: "https://github.com/sa1ffffff/saif_portfolio" },
+      { label: "Live", href: "https://zones-mess-menu.vercel.app/" },
       { label: "GitHub", href: "https://github.com/sa1ffffff/zones_mess_menu" }
     ]
   },
