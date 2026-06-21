@@ -18,6 +18,16 @@ export interface ExperienceItem {
   skills?: string[];
 }
 
+export interface Certification {
+  title: string;
+  issuer: string;
+  date: string;
+  credentialId: string;
+  url: string;
+  skills: string[];
+  description: string;
+}
+
 export interface CurrentlyItem {
   emoji: string;
   title: string;
@@ -100,6 +110,45 @@ export const experiences: ExperienceItem[] = [
     details: [
       "Focus areas: Digital Logic Design, Database Systems, OOP (Java/C++), Multivariable Calculus, Linear Algebra, AI/ML."
     ]
+  }
+];
+
+export const certifications: Certification[] = [
+  {
+    title: "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization",
+    issuer: "DeepLearning.AI",
+    date: "May 2026",
+    credentialId: "O92Y3G75O0IQ",
+    url: "https://www.coursera.org/account/accomplishments/verify/O92Y3G75O0IQ",
+    skills: ["Machine Learning", "Hyperparameter Tuning", "Regularization", "Optimization"],
+    description: "Learned how to tune hyperparameters, apply regularization techniques to reduce overfitting, and use optimization methods to make training more efficient and stable. Explored practical concepts like dropout, batch normalization, and advanced gradient-based optimizers."
+  },
+  {
+    title: "Neural Networks and Deep Learning",
+    issuer: "DeepLearning.AI",
+    date: "May 2026",
+    credentialId: "AL0D9B7O3WIW",
+    url: "https://www.coursera.org/account/accomplishments/verify/AL0D9B7O3WIW",
+    skills: ["Machine Learning", "Neural Networks", "Deep Learning"],
+    description: "Built a strong foundation in forward/backward propagation, vectorization, logistic regression, and deep neural networks. Foundational course in building intelligent systems."
+  },
+  {
+    title: "Supervised Machine Learning: Regression and Classification",
+    issuer: "DeepLearning.AI",
+    date: "May 2026",
+    credentialId: "PMZB05G7O6EB",
+    url: "https://www.coursera.org/account/accomplishments/verify/PMZB05G7O6EB",
+    skills: ["Artificial Intelligence (AI)", "Machine Learning", "Regression", "Classification"],
+    description: "Foundational course in machine learning fundamentals. Explored core concepts of supervised learning, including linear and logistic regression."
+  },
+  {
+    title: "Generative AI: Prompt Engineering Basics",
+    issuer: "IBM",
+    date: "Mar 2026",
+    credentialId: "AAYLUVO7O8QJ",
+    url: "https://www.coursera.org/account/accomplishments/verify/AAYLUVO7O8QJ",
+    skills: ["Generative AI", "Prompt Engineering"],
+    description: "Explored the basics of prompt engineering and how to effectively communicate with and leverage large language models for various tasks."
   }
 ];
 
