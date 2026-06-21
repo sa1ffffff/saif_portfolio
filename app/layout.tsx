@@ -1,10 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
-const playfair = Playfair_Display({ subsets: ["latin"], display: "swap", weight: ["600", "700"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter"
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument"
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://saifullahwaseem.dev"),
@@ -14,7 +26,7 @@ export const metadata: Metadata = {
   },
   applicationName: "Saifullah Waseem Portfolio",
   description:
-    "Portfolio of Saifullah Waseem — CS student at NUST SEECS building full-stack, mobile, and AI-assisted software.",
+    "Portfolio of Saifullah Waseem — CS student at NUST SEECS building full-stack web apps, Android apps, and AI-assisted software with React, TypeScript, Kotlin, and Firebase.",
   keywords: [
     "Saifullah Waseem",
     "Portfolio",
@@ -22,7 +34,12 @@ export const metadata: Metadata = {
     "NUST SEECS",
     "React",
     "Next.js",
-    "TypeScript"
+    "TypeScript",
+    "Kotlin",
+    "Firebase",
+    "Supabase",
+    "TensorFlow",
+    "Android Developer"
   ],
   authors: [{ name: "Saifullah Waseem", url: "https://saifullahwaseem.dev" }],
   creator: "Saifullah Waseem",
@@ -34,24 +51,26 @@ export const metadata: Metadata = {
     follow: true
   },
   openGraph: {
-    title: "Saifullah Waseem | Portfolio",
+    title: "Saifullah Waseem | Full-Stack Developer",
     description:
-      "CS student at NUST SEECS. Full-stack developer and systems thinker building software that matters.",
+      "CS student at NUST SEECS. Full-stack developer building web apps, mobile tools, and AI-assisted software — from idea to deployment.",
     url: "https://saifullahwaseem.dev",
     siteName: "Saifullah Waseem Portfolio",
     type: "website",
     images: [
       {
         url: "/og-image.svg",
-        alt: "Saifullah Waseem portfolio preview"
+        width: 1200,
+        height: 630,
+        alt: "Saifullah Waseem — Full-Stack Developer Portfolio"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saifullah Waseem | Portfolio",
+    title: "Saifullah Waseem | Full-Stack Developer",
     description:
-      "CS student at NUST SEECS. Full-stack developer and systems thinker building software that matters.",
+      "CS student at NUST SEECS. Full-stack developer building web apps, mobile tools, and AI-assisted software.",
     images: ["/og-image.svg"]
   },
   icons: {
@@ -60,18 +79,39 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fafafa",
-  colorScheme: "light"
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafafe" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0f" }
+  ]
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="bg-background">
-      <body className={`${inter.className} antialiased`} style={{ "--font-serif": playfair.style.fontFamily } as React.CSSProperties}>
+    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Prevent flash of light theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch(e) {}
+              })();
+            `
+          }}
+        />
+      </head>
+      <body className="font-sans antialiased">
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

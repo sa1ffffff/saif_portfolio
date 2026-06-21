@@ -6,17 +6,24 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Work from "@/components/Work";
 import Experience from "@/components/Experience";
+import Currently from "@/components/Currently";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <motion.main id="main-content" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
+    <motion.main 
+      id="main-content" 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      transition={{ duration: 0.6 }}
+    >
       <Navbar />
       <Hero />
       <About />
       <Work />
       <Experience />
+      <Currently />
       <Contact />
       <Footer />
     </motion.main>

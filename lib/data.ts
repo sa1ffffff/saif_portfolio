@@ -18,6 +18,12 @@ export interface ExperienceItem {
   skills?: string[];
 }
 
+export interface CurrentlyItem {
+  emoji: string;
+  title: string;
+  description: string;
+}
+
 export const projects: Project[] = [
   {
     title: "SubtrakX",
@@ -39,7 +45,7 @@ export const projects: Project[] = [
     stack: ["React", "TypeScript", "TanStack Router", "Supabase", "PostgreSQL", "Tailwind CSS", "shadcn/ui"],
     description:
       "Internal web app for Zones LLC Islamabad to browse the monthly cafeteria menu by week and day, rate dinners with aggregated rating summaries, and submit feedback/queries to admins. Features Google OAuth via Supabase Auth, real-time PostgreSQL backend, and a responsive mobile-first UI.",
-    highlight: "Live in production · Used daily by Zones LLC staff",
+    highlight: "Live in production · 100+ daily users",
     links: [
       { label: "Live", href: "https://zones-mess-menu.vercel.app/" },
       { label: "GitHub", href: "https://github.com/sa1ffffff/zones_mess_menu" }
@@ -68,6 +74,16 @@ export const projects: Project[] = [
 
 export const experiences: ExperienceItem[] = [
   {
+    date: "June 2025 – Present",
+    title: "Account Executive · Zones LLC",
+    location: "Islamabad, Pakistan",
+    details: [
+      "B2B tech sales serving US enterprise clients with hardware, software, and cloud solutions.",
+      "Managing end-to-end sales cycles, client relationships, and cross-functional coordination."
+    ],
+    skills: ["B2B Sales", "Enterprise Tech", "Client Management", "Cloud Solutions"]
+  },
+  {
     date: "December 2024 – June 2025",
     title: "Technical Specialist · SquareTrade-Allstate",
     location: "Islamabad, Pakistan",
@@ -87,14 +103,48 @@ export const experiences: ExperienceItem[] = [
   }
 ];
 
-export const aboutTechStacks: string[] = [
-  "Java",
-  "C++",
-  "SQL",
-  "Firebase",
-  "TanStack",
-  "Git",
-  "Vercel",
-  "Claude Code",
-  "AI Coding IDEs"
+export const currentlyDoing: CurrentlyItem[] = [
+  {
+    emoji: "📚",
+    title: "DSA in C++",
+    description: "Striver's A2Z Sheet + NeetCode 150 — building strong algorithmic foundations."
+  },
+  {
+    emoji: "🧠",
+    title: "Deep Learning",
+    description: "Andrew Ng's Deep Learning Specialization on Coursera + hands-on TensorFlow projects."
+  },
+  {
+    emoji: "💼",
+    title: "Zones LLC",
+    description: "Account Executive in B2B tech sales — serving US enterprise clients daily."
+  },
+  {
+    emoji: "🛠️",
+    title: "Building",
+    description: "Shipping SAFAR (ride-sharing Android app) and refining live production apps."
+  }
 ];
+
+export const aboutTechStacks: string[] = [
+  "React",
+  "TypeScript",
+  "Next.js",
+  "Kotlin",
+  "C++",
+  "Java",
+  "SQL",
+  "Supabase",
+  "Firebase",
+  "TensorFlow",
+  "TanStack",
+  "Tailwind CSS",
+  "Git"
+];
+
+export const socialLinks = {
+  github: "https://github.com/sa1ffffff",
+  linkedin: "https://linkedin.com/in/saifullah-waseem",
+  email: "mailto:saifullahwasim1@gmail.com",
+  whatsapp: "https://wa.me/923123639722"
+};
