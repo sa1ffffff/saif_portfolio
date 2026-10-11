@@ -1,70 +1,102 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { Briefcase, Calendar, MapPin, ChevronRight } from "lucide-react";
+import { useState } from "react";
 import { experiences } from "@/lib/data";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } }
-};
+import { playHapticClick } from "@/lib/sound";
+import { appleFadeUpItem, appleStaggerContainer } from "@/lib/springs";
 
 export default function Experience() {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+
+  const toggleExpand = (index: number) => {
+    playHapticClick("tap");
+    setExpandedIndex((prev) => (prev === index ? null : index));
+  };
 
   return (
-    <section id="experience" className="border-t border-border bg-surface-secondary">
-      <div ref={ref} className="mx-auto max-w-content px-5 py-24 md:px-8">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <motion.p variants={itemVariants} className="section-label">Experience</motion.p>
+    <section id="experience" className="relative border-t border-border/80 px-4 py-28 md:px-8">
+      <div className="mx-auto max-w-content">
+        
+        {/* Section Header (SKILL.md §15) */}
+        <div className="mb-14">
+          <span className="section-label">Trajectory / 03</span>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-text-primary sm:text-4xl lg:text-5xl">
+            Enterprise execution & education.
+          </h2>
+          <p className="mt-3 max-w-2xl text-base text-text-secondary sm:text-lg">
+            Proven track record across corporate tech sales, technical claim triage, and formal Computer Science rigor.
+          </p>
+        </div>
 
-          <div className="mt-12 space-y-12">
-            {experiences.map((exp, index) => (
+        {/* Experience Timeline Grid */}
+        <motion.div
+          variants={appleStaggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          className="space-y-6"
+        >
+          {experiences.map((exp, index) => {
+            const isExpanded = expandedIndex === index;
+            return (
               <motion.article
                 key={exp.title}
-                variants={itemVariants}
-                className="group relative border-l-2 pl-8 transition-all duration-300"
-                style={{ borderColor: "var(--border)" }}
+                variants={appleFadeUpItem}
+                className="apple-card overflow-hidden p-6 sm:p-8"
               >
-                {/* Accent line that fills on hover */}
-                <div 
-                  className="absolute bottom-0 left-[-2px] top-0 w-[2px] origin-top scale-y-0 transition-transform duration-500 ease-out group-hover:scale-y-100"
-                  style={{ background: "var(--gradient-accent)" }}
-                />
+                <div
+                  onClick={() => toggleExpand(index)}
+                  className="cursor-pointer select-none"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent border border-accent/20">
+                        <Briefcase size={18} />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold tracking-tight text-text-primary">
+                          {exp.title}
+                        </h3>
+                        <div className="mt-1 flex items-center gap-3 text-xs text-text-muted">
+                          <span className="flex items-center gap-1">
+                            <MapPin size={12} className="text-accent" />
+                            {exp.location}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
 
-                {/* Dot marker */}
-                <span className="absolute -left-[11px] top-0 flex h-5 w-5 items-center justify-center rounded-full bg-surface">
-                  <span className="h-3 w-3 rounded-full transition-colors duration-300 group-hover:bg-accent" style={{ backgroundColor: "var(--border)" }} />
-                </span>
-
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                  <h3 className="text-xl font-bold text-text-primary">{exp.title}</h3>
-                  <p className="text-xs uppercase tracking-widest font-semibold text-text-muted shrink-0">{exp.date}</p>
+                    <div className="flex items-center gap-3 self-start sm:self-center">
+                      <span className="rounded-full bg-surface-secondary border border-border px-3 py-1 text-xs font-mono font-medium text-text-muted">
+                        <Calendar size={11} className="inline mr-1 text-accent" />
+                        {exp.date}
+                      </span>
+                      <motion.div
+                        animate={{ rotate: isExpanded ? 90 : 0 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                        className="text-text-muted hidden sm:block"
+                      >
+                        <ChevronRight size={18} />
+                      </motion.div>
+                    </div>
+                  </div>
                 </div>
-                
-                <p className="mt-1 text-sm font-medium text-accent">{exp.location}</p>
 
-                <div className="mt-5 space-y-2.5 text-[14.5px] leading-relaxed text-text-secondary">
-                  {exp.details.map((detail) => (
-                    <p key={`${index}-${detail}`}>{detail}</p>
+                {/* Details list */}
+                <div className="mt-6 space-y-2.5 text-[14.5px] leading-relaxed text-text-secondary border-t border-border/60 pt-5">
+                  {exp.details.map((detail, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5">
+                      <span className="text-accent mt-1 text-xs">◆</span>
+                      <span>{detail}</span>
+                    </div>
                   ))}
                 </div>
 
+                {/* Skill tags */}
                 {exp.skills && (
-                  <div className="mt-6 flex flex-wrap gap-2">
+                  <div className="mt-6 flex flex-wrap gap-2 pt-2">
                     {exp.skills.map((skill) => (
                       <span key={skill} className="tag-pill">
                         {skill}
@@ -73,9 +105,10 @@ export default function Experience() {
                   </div>
                 )}
               </motion.article>
-            ))}
-          </div>
+            );
+          })}
         </motion.div>
+
       </div>
     </section>
   );

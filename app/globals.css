@@ -4,124 +4,181 @@
 
 @layer base {
   :root {
-    /* Background */
-    --background: #fafafe;
-    --background-secondary: #f1f2f6;
-    --surface: #ffffff;
-    --surface-secondary: #f5f6fa;
-    --surface-elevated: #ffffff;
+    /* Apple Light Mode Palette (authentic apple.com aesthetics) */
+    --background: #f5f5f7;
+    --background-secondary: #eaeaec;
+    --surface: rgba(255, 255, 255, 0.78);
+    --surface-secondary: rgba(245, 245, 247, 0.65);
+    --surface-elevated: rgba(255, 255, 255, 0.92);
+    --surface-opaque: #ffffff;
 
-    /* Borders */
-    --border: #e4e5eb;
-    --border-light: #eeeff3;
+    /* Specular Borders & Rims */
+    --border: rgba(0, 0, 0, 0.08);
+    --border-light: rgba(0, 0, 0, 0.04);
+    --border-specular: rgba(255, 255, 255, 0.85);
 
-    /* Accent */
-    --accent: #7C5CF8;
-    --accent-hover: #6a4ae0;
-    --accent-soft: rgba(124, 92, 248, 0.08);
-    --accent-glow: rgba(124, 92, 248, 0.15);
+    /* Apple Signature Accent (San Francisco Blue) */
+    --accent: #0071e3;
+    --accent-hover: #0077ed;
+    --accent-soft: rgba(0, 113, 227, 0.08);
+    --accent-glow: rgba(0, 113, 227, 0.16);
 
-    /* Text */
-    --text-primary: #0f1117;
-    --text-secondary: #555770;
-    --text-muted: #9496a8;
+    /* Apple High-Vibrancy Typography */
+    --text-primary: #1d1d1f;
+    --text-secondary: #6e6e73;
+    --text-muted: #86868b;
 
     /* Gradients */
-    --gradient-accent: linear-gradient(135deg, #7C5CF8 0%, #6366f1 100%);
-    --gradient-accent-hover: linear-gradient(135deg, #6a4ae0 0%, #5558e3 100%);
+    --gradient-accent: linear-gradient(135deg, #0071e3 0%, #2997ff 100%);
+    --gradient-accent-hover: linear-gradient(135deg, #0077ed 0%, #47a6ff 100%);
+    --gradient-hero: radial-gradient(circle at 50% 0%, rgba(0, 113, 227, 0.06), transparent 70%);
 
-    /* Terminal */
-    --terminal-bg: #1a1b26;
-    --terminal-border: #2a2b3d;
-    --terminal-text: #c0caf5;
+    /* Terminal / Inspector Glass */
+    --terminal-bg: rgba(24, 24, 27, 0.92);
+    --terminal-border: rgba(255, 255, 255, 0.12);
+    --terminal-text: #e4e4e7;
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
-    --shadow-accent: 0 8px 32px rgba(124, 92, 248, 0.18);
+    /* Shadows & Depths */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+    --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 16px 48px -4px rgba(0, 0, 0, 0.09), 0 4px 16px -2px rgba(0, 0, 0, 0.04);
+    --shadow-glass: 0 20px 50px rgba(0, 0, 0, 0.07);
+    --shadow-accent: 0 10px 30px rgba(0, 113, 227, 0.22);
   }
 
   .dark {
-    --background: #0a0a0f;
-    --background-secondary: #0e0e15;
-    --surface: #12121a;
-    --surface-secondary: #16161f;
-    --surface-elevated: #1a1a25;
+    /* Apple Dark Mode Palette (Pure Obsidian & OLED black) */
+    --background: #000000;
+    --background-secondary: #0c0c0e;
+    --surface: rgba(24, 24, 28, 0.72);
+    --surface-secondary: rgba(30, 30, 36, 0.55);
+    --surface-elevated: rgba(36, 36, 44, 0.85);
+    --surface-opaque: #16161a;
 
-    --border: #1e1e2e;
-    --border-light: #25253a;
+    /* Specular Borders & Rims */
+    --border: rgba(255, 255, 255, 0.1);
+    --border-light: rgba(255, 255, 255, 0.06);
+    --border-specular: rgba(255, 255, 255, 0.22);
 
-    --accent: #7C5CF8;
-    --accent-hover: #8f72ff;
-    --accent-soft: rgba(124, 92, 248, 0.12);
-    --accent-glow: rgba(124, 92, 248, 0.2);
+    /* Apple Dark Mode Accent (Electric Azure) */
+    --accent: #2997ff;
+    --accent-hover: #47a6ff;
+    --accent-soft: rgba(41, 151, 255, 0.14);
+    --accent-glow: rgba(41, 151, 255, 0.28);
 
-    --text-primary: #e8e8f0;
-    --text-secondary: #8888a0;
-    --text-muted: #50506a;
+    /* Typography */
+    --text-primary: #f5f5f7;
+    --text-secondary: #a1a1a6;
+    --text-muted: #6e6e73;
 
-    --gradient-accent: linear-gradient(135deg, #7C5CF8 0%, #6366f1 100%);
-    --gradient-accent-hover: linear-gradient(135deg, #8f72ff 0%, #7578f5 100%);
+    /* Gradients */
+    --gradient-accent: linear-gradient(135deg, #2997ff 0%, #0071e3 100%);
+    --gradient-accent-hover: linear-gradient(135deg, #47a6ff 0%, #1e87f0 100%);
+    --gradient-hero: radial-gradient(circle at 50% 0%, rgba(41, 151, 255, 0.09), transparent 75%);
 
-    --terminal-bg: #0d0d14;
-    --terminal-border: #1a1a28;
-    --terminal-text: #c0caf5;
+    /* Terminal */
+    --terminal-bg: rgba(12, 12, 16, 0.94);
+    --terminal-border: rgba(255, 255, 255, 0.1);
+    --terminal-text: #e4e4e7;
 
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.4);
-    --shadow-accent: 0 8px 32px rgba(124, 92, 248, 0.25);
+    /* Shadows & Depths */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 20px 60px -8px rgba(0, 0, 0, 0.65);
+    --shadow-glass: 0 24px 64px rgba(0, 0, 0, 0.7);
+    --shadow-accent: 0 10px 32px rgba(41, 151, 255, 0.3);
   }
 
   * {
     border-color: var(--border);
+    -webkit-tap-highlight-color: transparent;
   }
 
   html {
     scroll-behavior: smooth;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
     background: var(--background);
     color: var(--text-primary);
-    font-feature-settings: "rlig" 1, "calt" 1;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-optical-sizing: auto;
+    letter-spacing: -0.012em;
+    transition: background-color 0.4s cubic-bezier(0.2, 0, 0, 1), color 0.4s cubic-bezier(0.2, 0, 0, 1);
+    overflow-x: hidden;
   }
 
   ::selection {
-    background: rgba(124, 92, 248, 0.25);
-    color: var(--text-primary);
+    background: var(--accent);
+    color: #ffffff;
   }
 }
 
 @layer components {
-  /* Skip link */
+  /* Apple Skip Link */
   .skip-link {
-    @apply absolute left-4 -top-12 z-[100] rounded-full border px-4 py-2 text-sm font-medium;
+    @apply fixed left-4 top-4 z-[100] -translate-y-20 rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-wider backdrop-blur-xl transition-transform duration-200 focus:translate-y-0 focus:outline-none;
     border-color: var(--accent);
-    background: var(--surface);
+    background: var(--surface-elevated);
     color: var(--text-primary);
-    transition: top 0.2s ease;
-  }
-  .skip-link:focus {
-    top: 1rem;
-    outline: none;
+    box-shadow: var(--shadow-md);
   }
 
-  /* Section label */
+  /* Optical Section Label (SKILL.md §15) */
   .section-label {
-    @apply text-xs uppercase tracking-[0.2em] font-semibold;
+    @apply inline-block text-[11px] font-semibold uppercase tracking-[0.16em];
     color: var(--accent);
   }
 
-  /* Tag pill */
+  /* Apple Liquid Glass Surface (SKILL.md §12) */
+  .apple-glass {
+    background: var(--surface);
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    border: 1px solid var(--border);
+    box-shadow: inset 0 1px 0 0 var(--border-specular), var(--shadow-sm);
+  }
+
+  /* Apple Elevated Card Surface (SKILL.md §12) */
+  .apple-card {
+    background: var(--surface);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid var(--border);
+    border-top: 1px solid var(--border-specular);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  }
+
+  .apple-card:hover {
+    border-color: rgba(41, 151, 255, 0.35);
+    box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.08), inset 0 1px 0 0 var(--border-specular);
+  }
+
+  .dark .apple-card:hover {
+    box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+  }
+
+  /* Instant Press Response (SKILL.md §1) */
+  .apple-press {
+    user-select: none;
+    -webkit-user-select: none;
+    transition: transform 100ms cubic-bezier(0, 0, 0.2, 1), opacity 100ms ease;
+  }
+  .apple-press:active {
+    transform: scale(0.97);
+  }
+
+  /* Apple Interactive Tag Pill */
   .tag-pill {
-    @apply rounded-full border px-3 py-1.5 text-xs font-medium;
+    @apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium;
     border-color: var(--border);
     background: var(--surface-secondary);
     color: var(--text-secondary);
-    transition: all 0.25s ease;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .tag-pill:hover {
     border-color: var(--accent);
@@ -130,122 +187,124 @@
     transform: translateY(-1px);
   }
 
-  /* Link underline */
-  .link-underline {
-    @apply relative;
-  }
-  .link-underline::after {
-    content: "";
-    @apply absolute left-0 bottom-[-3px] w-full h-px scale-x-0 origin-left;
-    background: var(--accent);
-    transition: transform 0.3s ease;
-  }
-  .link-underline:hover::after {
-    @apply scale-x-100;
-  }
-
-  /* Gradient text */
-  .gradient-text {
+  /* Apple Primary Button */
+  .apple-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200;
     background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    box-shadow: 0 4px 14px 0 var(--accent-glow);
+  }
+  .apple-btn-primary:hover {
+    background: var(--gradient-accent-hover);
+    box-shadow: 0 6px 20px 0 var(--accent-glow);
+    transform: translateY(-1px);
+  }
+  .apple-btn-primary:active {
+    transform: scale(0.97);
   }
 
-  /* Glow */
-  .glow-accent {
-    box-shadow: var(--shadow-accent);
-  }
-
-  /* Card */
-  .card-base {
-    @apply rounded-2xl border;
+  /* Apple Secondary Button */
+  .apple-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold transition-all duration-200;
     border-color: var(--border);
     background: var(--surface);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .card-base:hover {
-    border-color: var(--accent);
-    box-shadow: var(--shadow-accent);
-  }
-
-  /* Terminal */
-  .terminal {
-    background: var(--terminal-bg);
-    border: 1px solid var(--terminal-border);
-    color: var(--terminal-text);
-    @apply rounded-xl overflow-hidden font-mono text-sm;
-  }
-  .terminal-titlebar {
-    @apply flex items-center gap-2 px-4 py-3 border-b;
-    border-color: var(--terminal-border);
-    background: rgba(0, 0, 0, 0.2);
-  }
-  .terminal-dot {
-    @apply w-3 h-3 rounded-full;
-  }
-
-  /* Form inputs */
-  .form-input {
-    @apply w-full rounded-xl border px-4 py-3 text-sm outline-none;
-    border-color: var(--border);
-    background: var(--surface-secondary);
     color: var(--text-primary);
-    transition: all 0.25s ease;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
-  .form-input:focus {
+  .apple-btn-secondary:hover {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-soft);
+    color: var(--accent);
+    background: var(--accent-soft);
+    transform: translateY(-1px);
   }
-  .form-input::placeholder {
-    color: var(--text-muted);
-  }
-
-  /* Frosted glass */
-  .frosted {
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
+  .apple-btn-secondary:active {
+    transform: scale(0.97);
   }
 
-  /* Cursor glow */
-  .cursor-glow {
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    transition: opacity 0.3s ease;
+  /* Specular Highlight Rim */
+  .specular-rim {
+    border-top: 1px solid var(--border-specular);
   }
 
-  /* Pulse green */
-  .pulse-green {
-    @apply relative;
+  /* Keynote Display Headline (SKILL.md §15) */
+  .keynote-title {
+    font-size: clamp(2.75rem, 6.2vw, 5.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    font-weight: 700;
   }
-  .pulse-green::before {
+
+  /* Subtitle with optical sizing */
+  .keynote-sub {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    color: var(--text-secondary);
+  }
+
+  /* Pulse Status Indicator */
+  .live-status-dot {
+    @apply relative flex h-2.5 w-2.5;
+  }
+  .live-status-dot::before {
     content: "";
-    @apply absolute inset-0 rounded-full;
-    background: #22c55e;
-    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    @apply absolute inset-0 rounded-full bg-emerald-500 opacity-75;
+    animation: apple-pulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
-
-  /* Blink cursor */
-  .blink {
-    animation: blink 1s step-end infinite;
+  .live-status-dot::after {
+    content: "";
+    @apply relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500;
   }
 }
 
-@keyframes pulse-ring {
+@keyframes apple-pulse {
   0%, 100% {
-    opacity: 0.3;
+    opacity: 0.6;
     transform: scale(1);
   }
   50% {
     opacity: 0;
-    transform: scale(2.5);
+    transform: scale(2.6);
   }
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+/* Accessibility & System Signals (SKILL.md §14) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .apple-press:active {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .apple-glass,
+  .apple-card,
+  .frosted,
+  header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: var(--surface-opaque) !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --border: rgba(0, 0, 0, 0.4);
+    --text-secondary: #333336;
+  }
+  .dark {
+    --border: rgba(255, 255, 255, 0.5);
+    --text-secondary: #d1d1d6;
+  }
+  .apple-card,
+  .apple-glass {
+    border-width: 2px !important;
+  }
 }
