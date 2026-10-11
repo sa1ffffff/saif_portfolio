@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Briefcase, Sparkles, Code2, Users, Layers } from "lucide-react";
+import { GraduationCap, Sparkles, Code2, Users, Layers, Brain } from "lucide-react";
 import { useState } from "react";
 import { aboutTechStacks } from "@/lib/data";
 import { playHapticClick } from "@/lib/sound";
-import { appleFadeUpItem, appleSpringDefault, appleStaggerContainer } from "@/lib/springs";
+import { appleFadeUpItem, appleStaggerContainer } from "@/lib/springs";
 
 const bentoMetrics = [
   { label: "Active Production Apps", value: "4+", icon: Layers, note: "Built & deployed" },
-  { label: "Daily Active Users", value: "100+", icon: Users, note: "Zones Mess Menu" },
-  { label: "B2B Tech Enterprise", value: "Zones", icon: Briefcase, note: "Account Executive" },
+  { label: "Daily Active Users", value: "100+", icon: Users, note: "Mess Menu App" },
+  { label: "Systems & Algorithms", value: "C++ / TS", icon: Code2, note: "Core focus" },
   { label: "Academic Foundation", value: "NUST", icon: GraduationCap, note: "SEECS CS '29" }
 ];
 
@@ -33,7 +33,7 @@ export default function About() {
             Designed for clarity. Built for performance.
           </h2>
           <p className="mt-3 max-w-2xl text-base text-text-secondary sm:text-lg">
-            A software engineer who bridges systems programming, modern web craft, and enterprise execution.
+            A software engineer who bridges systems programming, modern web craft, and algorithmic problem solving.
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export default function About() {
                   I started in low-level <strong className="text-text-primary">C++</strong> building algorithmic foundations, memory management logic, and 3D simulation systems. That discipline carried directly into full-stack engineering, where every state update, network roundtrip, and layout repaint is accounted for.
                 </p>
                 <p>
-                  At <strong className="text-text-primary">Zones LLC Islamabad</strong>, I authored and shipped the internal <em>Zones Mess Menu</em> platform serving over 100+ daily employees with real-time Supabase PostgreSQL synchronization and Google OAuth.
+                  I authored and shipped the <em>Zones Mess Menu</em> platform serving over 100+ daily users with real-time Supabase PostgreSQL synchronization, role-based analytics, and Google OAuth.
                 </p>
                 <p>
                   Today, I&apos;m engineering <strong className="text-text-primary">SAFAR</strong>, an emerald-themed ride-sharing Android application in Kotlin Jetpack Compose and Firebase, while deepening my algorithmic mastery across DSA and Deep Learning.
@@ -121,24 +121,24 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Enterprise Experience Highlight Card */}
+          {/* AI & Deep Learning Systems Card */}
           <motion.div
             variants={appleFadeUpItem}
             className="apple-card flex flex-col justify-between p-7 md:col-span-1 lg:col-span-2"
           >
             <div>
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-500 mb-6 border border-emerald-500/20">
-                <Briefcase size={22} />
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-500 mb-6 border border-purple-500/20">
+                <Brain size={22} />
               </div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-500">Industry Practice</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-purple-500">Intelligent Systems</p>
               <h4 className="mt-2 text-xl font-bold tracking-tight text-text-primary">
-                B2B Enterprise & Tech Sales
+                Deep Learning & Neural Networks
               </h4>
               <p className="mt-1 text-sm font-medium text-text-secondary">
-                Zones LLC · Account Executive
+                DeepLearning.AI Specialization & TensorFlow
               </p>
               <p className="mt-3 text-xs leading-relaxed text-text-secondary">
-                Handling end-to-end IT procurement, enterprise cloud architectures, and hardware/software solutions for Fortune 500 US enterprise clients. Understanding the business mechanics behind software products.
+                Mastering forward/backward propagation, vectorization, hyperparameter tuning, dropout, and advanced optimization algorithms. Applying machine learning models to production workflows and intelligent full-stack applications.
               </p>
             </div>
 

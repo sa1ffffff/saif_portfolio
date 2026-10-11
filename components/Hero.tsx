@@ -17,7 +17,7 @@ const specsData = {
   name: "Saifullah Waseem",
   institution: "NUST SEECS (Islamabad, PK)",
   degree: "B.S. Computer Science ('25–'29)",
-  current_role: "Account Executive @ Zones LLC",
+  current_role: "Full-Stack Software Engineer",
   active_focus: "DSA (C++) · Deep Learning · SAFAR Android App",
   availability: "Open to Internships & Engineering Roles"
 };

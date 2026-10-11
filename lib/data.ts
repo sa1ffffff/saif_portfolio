@@ -54,7 +54,7 @@ export const projects: Project[] = [
     year: "2026",
     stack: ["React", "TypeScript", "TanStack Router", "Supabase", "PostgreSQL", "Tailwind CSS", "shadcn/ui"],
     description:
-      "Internal web app for Zones LLC Islamabad to browse the monthly cafeteria menu by week and day, rate dinners with aggregated rating summaries, and submit feedback/queries to admins. Features Google OAuth via Supabase Auth, real-time PostgreSQL backend, and a responsive mobile-first UI.",
+      "Web app engineered for cafeteria operations to browse monthly menus by week and day, rate dinners with aggregated rating summaries, and submit feedback to admins. Features Google OAuth via Supabase Auth, real-time PostgreSQL backend, and a responsive mobile-first UI.",
     highlight: "Live in production · 100+ daily users",
     links: [
       { label: "Live", href: "https://zones-mess-menu.vercel.app/" },
@@ -84,14 +84,12 @@ export const projects: Project[] = [
 
 export const experiences: ExperienceItem[] = [
   {
-    date: "June 2025 – Present",
-    title: "Account Executive · Zones LLC",
+    date: "September 2025 – Present",
+    title: "B.S. Computer Science · NUST SEECS",
     location: "Islamabad, Pakistan",
     details: [
-      "B2B tech sales serving US enterprise clients with hardware, software, and cloud solutions.",
-      "Managing end-to-end sales cycles, client relationships, and cross-functional coordination."
-    ],
-    skills: ["B2B Sales", "Enterprise Tech", "Client Management", "Cloud Solutions"]
+      "Focus areas: Digital Logic Design, Database Systems, OOP (Java/C++), Multivariable Calculus, Linear Algebra, AI/ML."
+    ]
   },
   {
     date: "December 2024 – June 2025",
@@ -102,14 +100,6 @@ export const experiences: ExperienceItem[] = [
       "Collaborated with cross-functional teams on escalated cases."
     ],
     skills: ["Customer Service", "Technical Communication", "Agile Problem Solving"]
-  },
-  {
-    date: "September 2025 – Present",
-    title: "B.S. Computer Science · NUST SEECS",
-    location: "Islamabad, Pakistan",
-    details: [
-      "Focus areas: Digital Logic Design, Database Systems, OOP (Java/C++), Multivariable Calculus, Linear Algebra, AI/ML."
-    ]
   }
 ];
 
@@ -164,9 +154,9 @@ export const currentlyDoing: CurrentlyItem[] = [
     description: "Andrew Ng's Deep Learning Specialization on Coursera + hands-on TensorFlow projects."
   },
   {
-    emoji: "💼",
-    title: "Zones LLC",
-    description: "Account Executive in B2B tech sales — serving US enterprise clients daily."
+    emoji: "⚡",
+    title: "Full-Stack Systems",
+    description: "Architecting high-performance web applications, API integrations, and developer tooling."
   },
   {
     emoji: "🛠️",
